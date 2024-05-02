@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Your Review</title>
+    <link rel="stylesheet" href="style3.css">
+    <style>
+        body {
+            background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(pune1.jpg);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>S U B M I T - Y O U R - R E V I E W &#128578;</h1>
+    </header>
+
+    <section class="review-form">
+        <form id="review-form" action="process_review.php" method="post" enctype="multipart/form-data">
+            <label for="reviewer-name">Your Name:</label>
+            <input type="text" id="reviewer-name" name="reviewer-name" required><br><br>
+
+            <label for="reviewer-rating">Rating:</label>
+            <select id="reviewer-rating" name="reviewer-rating" required>
+                <option value="1">1 Star</option>
+                <option value="2">2 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="5">5 Stars</option>
+            </select><br><br>
+
+            <label for="review-text">Review:</label>
+            <textarea id="review-text" name="review-text" rows="4" required></textarea><br><br>
+
+            <label for="review-images">Upload Images:</label>
+            <input type="file" id="review-images" name="review-images[]" multiple accept="image/*"><br><br>
+
+            <input type="submit" value="Submit Review">
+        </form>
+    </section>
+    <script>
+        const reviewForm = document.getElementById("review-form");
+        const nameInput = document.getElementById("reviewer-name");
+        const textArea = document.getElementById("review-text");
+    
+        reviewForm.addEventListener("submit", function (event) {
+            // Custom validation for the "Your Name" field
+            if (nameInput.value.length < 2) {
+                alert("Your Name must be at least 2 characters.");
+                event.preventDefault(); // Prevent form submission
+            }
+    
+            // Custom validation for the "Review Text" field
+            if (textArea.value.length < 10) {
+                alert("Review Text must be at least 10 characters.");
+                event.preventDefault(); // Prevent form submission
+            }
+    
+            // Form submission successful
+            if (nameInput.value.length >= 2 && textArea.value.length >= 10) {
+                event.preventDefault(); // Prevent the default form submission behavior
+                showSuccessMessage();
+            }
+        });
+    
+        function showSuccessMessage() {
+            alert("Your Review submitted Successfully. Thank you for submitting... \u2764\uFE0F \uD83D\uDE04");
+        }
+    </script>
+    
+</body>
+</html>

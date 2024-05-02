@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>REGISTER</h2>
+        <div class="input-group">
+            <input type="text" id="name" placeholder="Name">
+            <span class="error" id="name-error">Name must be at least 2 characters</span>
+        </div>
+        <div class="input-group">
+            <input type="email" id="email" placeholder="Email">
+            <span class="error" id="email-error">Invalid email format</span>
+        </div>
+        <div class="input-group">
+            <input type="text" id="phone" placeholder="Phone Number">
+            <span class="error" id="phone-error">Phone number must be at least 10 digits and contain only numbers</span>
+        </div>
+        <div class="input-group">
+            <input type="password" id="password" placeholder="Password">
+            <span class="error" id="password-error">Password must be at least 6 characters</span>
+            <span class="toggle-password" id="toggle-password">&#128065;</span>
+        </div>
+        <div class="input-group">
+            <input type="number" id="age" placeholder="Age">
+            <span class="error" id="age-error">Age must be at least 15</span>
+        </div>
+        <button id="login-button" onclick="validateForm()">Submit</button>
+        <div id="status-message" class="error"></div>
+    </div>
+    
+    <script>
+        
+        function validateForm() {
+            // Get the values entered by the user
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const password = document.getElementById("password").value;
+            const age = document.getElementById("age").value;
+
+            // Validation checks
+            let isValid = true;
+
+            if (name.length < 2) {
+                document.getElementById("name-error").style.display = "block";
+                isValid = false;
+            } else {
+                document.getElementById("name-error").style.display = "none";
+            }
+
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (!email.match(emailPattern)) {
+                document.getElementById("email-error").style.display = "block";
+                isValid = false;
+            } else {
+                document.getElementById("email-error").style.display = "none";
+            }
+
+            const phonePattern = /^[0-9]{10}$/;
+            if (!phone.match(phonePattern)) {
+                document.getElementById("phone-error").style.display = "block";
+                isValid = false;
+            } else {
+                document.getElementById("phone-error").style.display = "none";
+            }
+
+            if (password.length < 6) {
+                document.getElementById("password-error").style.display = "block";
+                isValid = false;
+            } else {
+                document.getElementById("password-error").style.display = "none";
+            }
+
+            if (age < 15) {
+                document.getElementById("age-error").style.display = "block";
+                isValid = false;
+            } else {
+                document.getElementById("age-error").style.display = "none";
+            }
+
+            if (isValid) {
+                // All validation checks passed, so you can submit the form
+                document.getElementById("status-message").innerHTML = "Registration successful!";
+            } else {
+                // Display a general error message or perform other actions
+                document.getElementById("status-message").innerHTML = "Please fix the errors above.";
+            }
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+<!------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>REGISTER</h2>
+        <div class="input-group">
+            <input type="text" id="name" placeholder="Name">
+            <span class="error" id="name-error">Name must be at least 2 characters</span>
+        </div>
+        <div class="input-group">
+            <input type="email" id="email" placeholder="Email">
+            <span class="error" id="email-error">Invalid email format</span>
+        </div>
+        <div class="input-group">
+            <input type="text" id="phone" placeholder="Phone Number">
+            <span class="error" id="phone-error">Phone number must be at least 10 digits and contain only numbers</span>
+        </div>
+        <div class="input-group">
+            <input type="password" id="password" placeholder="Password">
+            <span class="error" id="password-error">Password must be at least 6 characters</span>
+            <span class="toggle-password" id="toggle-password">&#128065;</span>
+        </div>
+        <div class="input-group">
+            <input type="number" id="age" placeholder="Age">
+            <span class="error" id="age-error">Age must be at least 15</span>
+        </div>
+        <button id="login-button">Submit</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>-->

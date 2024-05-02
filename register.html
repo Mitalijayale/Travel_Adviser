@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="registerstyle.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>REGISTER</h2>
+        <div class="input-group">
+            <input type="text" id="name" placeholder="Name">
+            <span class="error" id="name-error">Name must be at least 2 characters</span>
+        </div>
+        <div class="input-group">
+            <input type="email" id="email" placeholder="Email">
+            <span class="error" id="email-error">Invalid email format</span>
+        </div>
+        <div class="input-group">
+            <input type="text" id="phone" placeholder="Phone Number">
+            <span class="error" id="phone-error">Phone number must be at least 10 digits and contain only numbers</span>
+        </div>
+        <div class="input-group">
+            <input type="password" id="password" placeholder="Password">
+            <span class="error" id="password-error">Password must be at least 6 characters</span>
+            <span class="toggle-password" id="toggle-password">&#128065;</span>
+        </div>
+        <div class="input-group">
+            <input type="number" id="age" placeholder="Age">
+            <span class="error" id="age-error">Age must be at least 15</span>
+        </div>
+        <button id="login-button">Submit</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

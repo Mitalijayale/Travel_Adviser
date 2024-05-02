@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(pune1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: black;
+}
+.login-container {
+    background-color: #ffffff; /* Light gray background color */
+    padding: 30px; /* Increased padding for a larger box */
+    border-radius: 15px; /* Increased border radius for rounded corners */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Enhanced box shadow for depth */
+    text-align: center;
+    max-width: 400px; /* Added max-width to limit box width */
+    width: 100%; /* Ensure the box occupies the available width */
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 15px; /* Increased padding for input fields */
+    margin-top: 10px; /* Adjusted margin */
+    border: 3px solid #000000;
+    border-radius: 15px;
+}
+
+button {
+    background-color: #056321;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 20px; /* Increased padding for the button */
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    margin-top: 15px; /* Adjusted margin */
+}
+
+.checkbox input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.sign-in-with-google {
+    margin-top: 20px;
+}
+
+.sign-in-with-google button {
+    background-color: #dd4b39;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 20px; /* Increased padding for the button */
+    cursor: pointer;
+}
+
+.sign-in-with-google button:hover {
+    background-color: #c53727;
+}
